@@ -1,14 +1,14 @@
 # VIEW
-![front iew](https://github.com/Sushant-sus/Assessment-frontend/assets/66876713/3a56ff3c-4927-4534-9357-2b600bfcdc40)
+![front iew](https://github.com/Sushant-sus/Assessment-frontend/assets/66876713/c011becc-a298-489b-937c-3bffd8f4d241)
 
 # Layout View
-![front 2](https://github.com/Sushant-sus/Assessment-frontend/assets/66876713/a87d9bd4-d448-40aa-a5b3-426206c8d3be)
+![front 2](https://github.com/Sushant-sus/Assessment-frontend/assets/66876713/44944853-1b53-4f62-be70-bfaec8ba3b4d)
 
 # Buttom View
-![front 3](https://github.com/Sushant-sus/Assessment-frontend/assets/66876713/88db1a11-d5e9-46f0-a905-b27aba2cde1c)
+![front 3](https://github.com/Sushant-sus/Assessment-frontend/assets/66876713/fa7a4399-26bf-4cca-b669-521c2ad678ff)
 
 # Layout List Table View
-![layoutlist](https://github.com/Sushant-sus/Assessment-frontend/assets/66876713/082e240c-8e64-42bc-80f0-eb4d01e6784d)
+![layoutlist](https://github.com/Sushant-sus/Assessment-frontend/assets/66876713/ea6e9f02-52d1-4a9e-a208-5e9d26537f47)
 
 # Layout List Edit
 ![edit](https://github.com/Sushant-sus/Assessment-frontend/assets/66876713/fa94776e-9441-4b94-b5ad-bc8d9d81ecaf)
@@ -17,7 +17,7 @@
 ![new](https://github.com/Sushant-sus/Assessment-frontend/assets/66876713/1aaa6b7d-784c-4c9c-83f5-b3a61a1b30fb)
 
 # Layout Item Table View
-![layoutitemlist](https://github.com/Sushant-sus/Assessment-frontend/assets/66876713/a9c5bbf7-ee18-4e70-8594-d2485bb41fac)
+![layoutitemlist](https://github.com/Sushant-sus/Assessment-frontend/assets/66876713/d0c7dd1f-e577-4011-a787-a33b99468ee1)
 
 # Getting Started with Create React App
 
