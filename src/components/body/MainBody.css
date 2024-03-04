@@ -1,0 +1,106 @@
+.main1 {
+  height: 750px;
+  max-width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.main2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  border-bottom: 1px solid rgb(196, 206, 216);
+}
+
+.main3 {
+  /* display: flex; */
+  justify-content: left;
+  height: 200px;
+  width: 80%;
+  padding: 0px 10px;
+}
+
+.main4 {
+  height: 10%;
+  width: fit-content;
+}
+
+.main5 {
+  height: 90%;
+}
+
+.main5 img {
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+}
+
+.services {
+  display: flex;
+  height: 400px;
+  width: screen;
+  border-bottom: 1px solid rgb(196, 206, 216);
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  grid-template-rows: repeat(2, auto); /* 2 rows */
+  gap: 10px; /** Adjust the gap between items as needed */
+  width: 1200px;
+  height: 90%;
+}
+
+.grid-item {
+  padding: 20px;
+  border: 1px solid #ccc; /* Optional: Add border for each grid item */
+}
+
+.item1 {
+  grid-area: myArea;
+  height: 30px;
+}
+
+.item2 {
+  max-height: 200px;
+}
+
+.item2 img {
+  height: 200px;
+  object-fit: fill;
+}
+
+.about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: peachpuff;
+  /* background-image: url(../../image/Screenshot\ 2024-02-28\ 174131.png); */
+  height: 250px;
+}
+
+.about-container {
+  display: grid;
+  grid-template-columns: 200px 650px 200px;
+}
+
+.about-body {
+  display: grid;
+  grid-template-rows: 20px 40px 40px 20px;
+  row-gap: 10px;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  /* color: white; */
+}
+
+/* .about img{
+  position: relative;
+  object-fit: fill;
+  height: 100%;
+  width: 100%;
+} */
