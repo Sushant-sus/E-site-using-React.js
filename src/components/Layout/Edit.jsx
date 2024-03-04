@@ -16,7 +16,6 @@ function Edit({ onSubmit, onClose, rowData }) {
     { header: "Allow Display", accessor: "allowwebdisplay" },
   ];
 
-  // Initialize formData state with the rowData if available
   const [formData, setFormData] = useState({});
 
   // Update formData state when rowData prop changes
@@ -39,17 +38,13 @@ function Edit({ onSubmit, onClose, rowData }) {
     try {
       // Make API call to update layout item
       await LayoutEditPost(formData);
-      // Call the onSubmit callback with the updated data
       onSubmit(formData);
-      // Close the modal
       onClose();
     } catch (error) {
       console.error("Error updating layout item:", error);
-      // Handle error as needed
     }
   };
 
-  // Handle form cancellation
   const handleCancel = () => {
     onClose();
   };

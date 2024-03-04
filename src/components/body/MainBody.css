@@ -50,14 +50,14 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4 columns */
   grid-template-rows: repeat(2, auto); /* 2 rows */
-  gap: 10px; /** Adjust the gap between items as needed */
+  gap: 10px;
   width: 1200px;
   height: 90%;
 }
 
 .grid-item {
   padding: 20px;
-  border: 1px solid #ccc; /* Optional: Add border for each grid item */
+  border: 1px solid #ccc;
 }
 
 .item1 {
@@ -95,12 +95,4 @@
   padding: 10px;
   justify-content: center;
   align-items: center;
-  /* color: white; */
 }
-
-/* .about img{
-  position: relative;
-  object-fit: fill;
-  height: 100%;
-  width: 100%;
-} */

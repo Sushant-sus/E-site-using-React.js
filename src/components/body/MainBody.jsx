@@ -14,9 +14,8 @@ const images = [advertisement, ad1, ad2, img1, img2];
 
 const MainBody = () => {
   const [layoutData, setLayoutData] = useState([]);
-  const navigate = useNavigate(); // Using useNavigate instead of useHistory
+  const navigate = useNavigate();
 
-  // Function to navigate to layout item list
   const navigateToLayoutItemList = (layoutId) => {
     navigate(`/layout/item/list/${layoutId}`);
   };
@@ -42,7 +41,7 @@ const MainBody = () => {
 
   const handleEvent = (layoutId) => {
     console.log("clicked:", layoutId);
-    navigateToLayoutItemList(layoutId); // Call the function to navigate
+    navigateToLayoutItemList(layoutId);
     navigate(`/layout/item/${layoutId}`);
   };
 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { layoutitemlist } from "../Api"; // Import the layoutitemlist function
+import { layoutitemlist } from "../Api";
 import { useParams } from "react-router-dom";
 
 const LayoutItemList = () => {

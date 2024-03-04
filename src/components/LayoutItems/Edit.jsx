@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { LayoutItemEditPost } from "../Api";
 
 function Edit({ onSubmit, onClose, rowData }) {
-  // Same column names as LayoutItemList component
   const columnNames = [
     { header: "Layout Item ID", accessor: "layoutItemId", type: "number" },
     { header: "Type", accessor: "type", type: "string" },
@@ -26,15 +25,12 @@ function Edit({ onSubmit, onClose, rowData }) {
     { header: "Image File", accessor: "imagefile", type: "string" },
   ];
 
-  // Initialize formData state with the rowData if available
   const [formData, setFormData] = useState({});
 
-  // Update formData state when rowData prop changes
   useEffect(() => {
     setFormData(rowData);
   }, [rowData]);
 
-  // Handle form input change
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -43,23 +39,17 @@ function Edit({ onSubmit, onClose, rowData }) {
     });
   };
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Make API call to update layout item
       await LayoutItemEditPost(formData);
-      // Call the onSubmit callback with the updated data
       onSubmit(formData);
-      // Close the modal
       onClose();
     } catch (error) {
       console.error("Error updating layout item:", error);
-      // Handle error as needed
     }
   };
 
-  // Handle form cancellation
   const handleCancel = () => {
     onClose();
   };

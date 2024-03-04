@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 
 function New({ onAdd, onClose }) {
-
-
-   const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState({
     layoutItemId: 0,
     type: "",
     title: "",
@@ -17,11 +15,10 @@ function New({ onAdd, onClose }) {
     logo: "",
     extraInfo1: "",
     extraInfo2: "",
-    parentLayoutItemId: 0
+    parentLayoutItemId: 0,
     // logoFile: null,
     // imagefile: null
   });
-  // Define column names matching LayoutItemList component
   const columnNames = [
     // { header: "Layout Item ID", accessor: "layoutItemId" },
     { header: "Type", accessor: "type" },
@@ -55,20 +52,18 @@ function New({ onAdd, onClose }) {
     });
   };
 
-  // Handle form submission
+  // Handle form submit
   const handleSubmit = (e) => {
     e.preventDefault();
     onAdd(formData);
-    onClose(); // Close the popup after adding the item
-    // Reset formData to empty values for all columns
+    onClose();
     setFormData(
       Object.fromEntries(columnNames.map((column) => [column.accessor, ""]))
     );
   };
 
-  // Handle form cancellation
   const handleCancel = () => {
-    onClose(); // Close the popup when Cancel button is clicked
+    onClose();
   };
 
   return (

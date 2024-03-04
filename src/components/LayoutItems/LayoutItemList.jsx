@@ -2,26 +2,30 @@ import React, { useState, useEffect } from "react";
 import New from "./New";
 import Edit from "./Edit";
 import "../Layout/Layout.css";
-import { LayoutItemEditPost, addLayoutItem, layoutitemlist,layoutindexlistGet } from "../Api"; // Import the API functions
+import {
+  LayoutItemEditPost,
+  addLayoutItem,
+  layoutitemlist,
+  layoutindexlistGet,
+} from "../Api";
 import { useParams } from "react-router";
-import {LayoutItemDeletePost} from '../Api';
+import { LayoutItemDeletePost } from "../Api";
+
 function LayoutItemList() {
   const { layoutId } = useParams();
 
-  const [showNew, setShowNew] = useState(false); // State to manage popup visibility
+  const [showNew, setShowNew] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
-  const [layoutData, setLayoutData] = useState([]); // State to store layout data
-  const [selectedLayoutId, setSelectedLayoutId] = useState(null); // State to store the selected layout ID
+  const [layoutData, setLayoutData] = useState([]);
+  const [selectedLayoutId, setSelectedLayoutId] = useState(null);
 
   useEffect(() => {
-    // Fetch layout data when the component mounts
     fetchLayoutData();
   }, []);
 
   const fetchLayoutData = async () => {
     try {
       debugger;
-      // Fetch layout data using the layoutitemlist function
       const data = await layoutindexlistGet();
       // const filteredData = data.filter(
       //   (item) => item.layoutId === parseInt(layoutId)
@@ -33,7 +37,6 @@ function LayoutItemList() {
   };
 
   const columnNames = [
-    
     { header: "Layout Item ID", accessor: "layoutItemId" },
     { header: "Logo", accessor: "logo" },
     { header: "Image", accessor: "image" },
@@ -66,11 +69,9 @@ function LayoutItemList() {
       await LayoutItemEditPost(updatedData);
       // Fetch updated layout data after updating the item
       await fetchLayoutData();
-      // Close the modal
       setShowEdit(false);
     } catch (error) {
       console.error("Error updating layout item:", error);
-      // Handle error as needed
     }
   };
 
@@ -81,7 +82,6 @@ function LayoutItemList() {
       LayoutItemDeletePost(layoutItemId);
     } catch (error) {
       console.error("Error deleting layout item:", error);
-      // Handle error as needed
     }
   };
 
@@ -89,15 +89,11 @@ function LayoutItemList() {
   const handleAdd = async (formData) => {
     try {
       debugger;
-      // Make API call to add the new item
       await addLayoutItem(formData);
-      // Fetch updated layout data after adding the new item
       await fetchLayoutData();
-      // Close the popup window
       setShowNew(false);
     } catch (error) {
       console.error("Error adding new item:", error);
-      // Handle error as needed
     }
   };
 
@@ -110,12 +106,12 @@ function LayoutItemList() {
   return (
     <div className="mx-auto p-4 h-screen layout">
       <div className="flex justify-between items-center my-2">
-        <h2 className="text-2xl font-bold mb-4 bg-slate-200 p-1 rounded-lg text-green-700 ">
+        <h2 className="text-2xl font-bold mb-4 bg-slate-200 p-1 rounded-lg text-green-700 cursor-pointer">
           Layout Item Table
         </h2>
         <button
           className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg"
-          onClick={() => setShowNew(true)} // Show popup when the button is clicked
+          onClick={() => setShowNew(true)}
         >
           New
         </button>
@@ -136,7 +132,7 @@ function LayoutItemList() {
             <tr className="text-center" key={rowIndex}>
               {columnNames.map((column, colIndex) => (
                 <td key={colIndex} className="border border-x-2">
-                  {column.accessor === "image" || column.accessor==="logo" ? (
+                  {column.accessor === "image" || column.accessor === "logo" ? (
                     <img
                       src={layoutItem[column.accessor]}
                       alt=""
@@ -165,7 +161,6 @@ function LayoutItemList() {
           ))}
         </tbody>
       </table>
-      {/* Render the New component conditionally based on the showNew state */}
       {showNew && <New onAdd={handleAdd} onClose={handleClose} />}
       {showEdit && (
         <Edit

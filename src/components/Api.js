@@ -24,7 +24,7 @@ export const layoutlist = async () => {
     return data.result.data;
   } catch (error) {
     console.error("Error fetching layout data:", error);
-    throw error; // Re-throw the error to handle it in the calling code
+    throw error;
   }
 };
 
@@ -42,7 +42,7 @@ export const layoutitemlist = async () => {
     return data.result.data;
   } catch (error) {
     console.error("Error fetching layout data:", error);
-    throw error; // Re-throw the error to handle it in the calling code
+    throw error;
   }
 };
 
@@ -59,7 +59,7 @@ export const layoutindexlistGet = async () => {
     return data.result.data;
   } catch (error) {
     console.error("Error fetching layout data:", error);
-    throw error; // Re-throw the error to handle it in the calling code
+    throw error;
   }
 };
 //layout new
@@ -80,7 +80,7 @@ export const addLayout = async (formData) => {
     return data;
   } catch (error) {
     console.error("Error adding layout item:", error);
-    throw error; // Re-throw the error to handle it in the calling code
+    throw error;
   }
 };
 
@@ -104,47 +104,9 @@ export const addLayoutItem = async (newItemData) => {
     return data;
   } catch (error) {
     console.error("Error adding layout item:", error);
-    throw error; // Re-throw the error to handle it in the calling code
+    throw error;
   }
 };
-
-// debugger
-// newItemData.layoutItemId= 0;
-// newItemData.type="pizza";
-// newItemData.title= "pizza";
-// newItemData.layoutId= 1;
-// newItemData.displayOrder= 1;
-// newItemData.featured= true;
-// newItemData.image= "https://encry";
-// newItemData.subtitle1= "pizza";
-// newItemData.subtitle2= "pizza";
-// newItemData.subtitle3= "pizza";
-// newItemData.logo="https://enc";
-// newItemData.extraInfo1= "pizza";
-// newItemData.extraInfo2= "pizza";
-// newItemData.parentLayoutItemId= 1;
-
-// fetch('https://localhost:44342/api/layout/items/new', {
-// method: 'POST',
-// headers: {
-// 'Content-Type': 'application/json'
-// },
-// body: JSON.stringify(newItemData)
-// })
-// .then(response => {
-// if (!response.ok) {
-// throw new Error(`Failed to add layout item: ${response.status}`);
-// }
-// return response.json();
-// })
-// .then(data => {
-// // Handle the successful response
-// console.log('Layout item added successfully:', data);
-// })
-// .catch(error => {
-// // Handle errors
-// console.error('Error adding layout item:', error);
-// });
 
 //edit layoutlist
 export const LayoutEditPost = async (postData) => {
@@ -194,10 +156,10 @@ export const LayoutDeletePost = async (layoutId) => {
       throw new Error(`Failed to delete layout item: ${data.message}`);
     }
 
-    return data.result; // Assuming the result contains relevant information about the deletion
+    return data.result;
   } catch (error) {
     console.error("Error deleting layout item:", error);
-    throw error; // Re-throw the error to handle it in the calling code
+    throw error;
   }
 };
 
@@ -219,10 +181,10 @@ export const LayoutItemDeletePost = async (layoutItemId) => {
       throw new Error(`Failed to delete layout item: ${data.message}`);
     }
     window.location.reload();
-    return data.result; // Assuming the result contains relevant information about the deletion
+    return data.result;
   } catch (error) {
     console.error("Error deleting layout item:", error);
-    throw error; // Re-throw the error to handle it in the calling code
+    throw error;
   }
 };
 

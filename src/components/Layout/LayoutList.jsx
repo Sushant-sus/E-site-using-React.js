@@ -7,26 +7,23 @@ import {
   LayoutEditPost,
   addLayout,
   LayoutDeletePost,
-} from "../Api"; // Import the layoutlist function
+} from "../Api";
 import { useNavigate } from "react-router-dom";
 
 function LayoutTable() {
   const navigate = useNavigate();
-  const [showNew, setShowNew] = useState(false); // State to manage popup visibility
+  const [showNew, setShowNew] = useState(false);
   const [showEdit, setShowEdit] = useState(false);
-  const [layoutData, setLayoutData] = useState([]); // State to store layout data
-  const [selectedLayoutId, setSelectedLayoutId] = useState(null); // State to store the selected layout ID
+  const [layoutData, setLayoutData] = useState([]);
+  const [selectedLayoutId, setSelectedLayoutId] = useState(null);
 
   useEffect(() => {
-    // Fetch layout data when the component mounts
     fetchLayoutData();
   }, []);
 
   const fetchLayoutData = async () => {
     try {
-      // Fetch layout data using the layoutlist function
       const data = await layoutlist();
-      // Set layout data to state
       setLayoutData(data);
     } catch (error) {
       console.error("Error fetching layout data:", error);
@@ -49,24 +46,19 @@ function LayoutTable() {
 
   // Function to handle edit button click
   const handleEdit = (layoutId) => {
-    // Handle edit action, for example, navigate to edit page
     console.log(`Edit layout with id ${layoutId}`);
     setSelectedLayoutId(layoutId);
     setShowEdit(true);
   };
 
-  // Define the onSubmit function
   const handleUpdate = async (updatedData) => {
     try {
       // Make API call to update layout item
       await LayoutEditPost(updatedData);
-      // Fetch updated layout data after adding the new item
       await fetchLayoutData();
-      // Close the modal
       setShowEdit(false);
     } catch (error) {
       console.error("Error updating layout item:", error);
-      // Handle error as needed
     }
   };
 
@@ -75,28 +67,22 @@ function LayoutTable() {
     try {
       console.log("delete layoutId:", layoutId);
 
-      // Make API call to delete layout item
-      await LayoutDeletePost(layoutId); // Assuming layoutId is the identifier for deletion
+      await LayoutDeletePost(layoutId);
       // Filter out the deleted item from layoutData
       setLayoutData((prevLayoutData) =>
         prevLayoutData.filter((item) => item.layoutId !== layoutId)
       );
     } catch (error) {
       console.error("Error deleting layout item:", error);
-      // Handle error as needed
     }
   };
 
   // Function to handle adding a new item
   const handleAdd = async (formData) => {
     try {
-      // Make a POST request to add the new item using the addLayoutItem function
       await addLayout(formData);
-
-      // Fetch updated layout data after adding the new item
       await fetchLayoutData();
       console.log("formData:", formData);
-      // Close the popup window
       setShowNew(false);
     } catch (error) {
       console.error("Error adding new item:", error);
@@ -124,7 +110,7 @@ function LayoutTable() {
         </h2>
         <button
           className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg"
-          onClick={() => setShowNew(true)} // Show popup when the button is clicked
+          onClick={() => setShowNew(true)}
         >
           New
         </button>
@@ -166,7 +152,6 @@ function LayoutTable() {
           ))}
         </tbody>
       </table>
-      {/* Render the New component conditionally based on the showNew state */}
       {showNew && <New onAdd={handleAdd} onClose={handleClose} />}
       {showEdit && (
         <Edit
