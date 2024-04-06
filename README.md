@@ -1,11 +1,11 @@
 # VIEW
-![front iew](https://github.com/Sushant-sus/Assessment-frontend/assets/66876713/c011becc-a298-489b-937c-3bffd8f4d241)
+![image](https://github.com/Sushant-sus/Assessment-frontend/assets/66876713/34652f10-a1c6-49de-806f-67898f4eb133)
 
 # Layout View
-![front 2](https://github.com/Sushant-sus/Assessment-frontend/assets/66876713/44944853-1b53-4f62-be70-bfaec8ba3b4d)
+![image](https://github.com/Sushant-sus/Assessment-frontend/assets/66876713/43fc35ce-8d88-427c-84be-6031103adf59)
 
 # Buttom View
-![front 3](https://github.com/Sushant-sus/Assessment-frontend/assets/66876713/fa7a4399-26bf-4cca-b669-521c2ad678ff)
+![image](https://github.com/Sushant-sus/Assessment-frontend/assets/66876713/6f069ab5-5421-4c7f-bde6-0cf89c977382)
 
 # Layout List Table View
 ![layoutlist](https://github.com/Sushant-sus/Assessment-frontend/assets/66876713/ea6e9f02-52d1-4a9e-a208-5e9d26537f47)
